@@ -4,8 +4,9 @@ Each OpenAPI doc file for an API group(listed in `kubectl api-versions`) will be
 
 ## Usage
 Assuming that you have access to your cluster (e.g. `$ export KUBECONFIG=kubeconfig`), run the following command.
-"""
-$ ./get_k8s_openapi_docs.sh
-"""
 
-OpenAPI doc files will be saved in the 'apidocs' directory.
+```
+$ ./get_k8s_openapi_docs.sh
+```
+
+OpenAPI doc files will be saved in the `apidocs`(hardcoded in the script file at the moment) directory.
