@@ -5,8 +5,8 @@
 ##  Author: Jeremy Choi (jechoi@redhat.com)
 ## 
 ##  Usage: 
-##    - Fetch all the OpenAPI docs: $ ./get_k8s_openapi_docs.sh
-##    - Fetch an API group's doc:   $ ./get_k8s_openapi_docs.sh <substring-of-API-group>
+##   - Fetch all the OpenAPI docs:                       $ ./get_k8s_openapi_docs.sh
+##   - Fetch docs for API groups that contain a string:  $ ./get_k8s_openapi_docs.sh <substring-of-API-group>
 ############################################################################
  
 PORT=7777
@@ -15,7 +15,7 @@ APIDOCS_DIR=apidocs
 if [ "$#" -gt 1 ]; then
   echo "Too many arguments"
   echo "Usage:"
-  echo " - Fetch all the OpenAPI docs: $ ./get_k8s_openapi_docs.sh"
+  echo " - Fetch all the OpenAPI docs:                      $ ./get_k8s_openapi_docs.sh"
   echo " - Fetch docs for API groups that contain a string: $ ./get_k8s_openapi_docs.sh <substring-of-API-group>"
   exit
 fi
