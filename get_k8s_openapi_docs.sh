@@ -31,7 +31,7 @@ if [ ! -z "$1" ]; then
   echo "You've set to download the API group: $group_name"
   group_found=false
 else
-  echo "You've set to download all the OpenAPI group: $group_name"
+  echo "You've set to download all the OpenAPI docs"
 fi
 
 for apipath in $(kubectl api-versions); do
