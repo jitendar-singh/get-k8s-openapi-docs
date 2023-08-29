@@ -1,14 +1,5 @@
 #!/bin/bash
 
-############################################################################
-##  Fetch OpenAPI docs of the Kubernetes APIs from the running cluster
-##  Author: Jitendar (jechoi@redhat.com)
-## 
-##  Usage: 
-##   - Fetch all the OpenAPI docs:                       $ ./get_k8s_openapi_docs.sh
-##   - Fetch docs for API groups that contain a string:  $ ./get_k8s_openapi_docs.sh <substring-of-API-group>
-############################################################################
- 
 PORT=7777
 APIDOCS_DIR=apidocs
 
