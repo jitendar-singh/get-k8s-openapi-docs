@@ -1,0 +1,79 @@
+= Fetch Kubernetes OpenAPI Docs Project
+
+== Prerequisites
+
+Before using the "Fetch Kubernetes OpenAPI Docs" project, ensure you have the following prerequisites:
+
+- A running Kubernetes cluster accessible from the machine where you intend to run the script.
+- The `kubectl` command-line tool installed and configured to interact with your Kubernetes cluster.
+- The `curl` command-line tool installed to fetch data from URLs.
+- (Optional) The `make` tool installed if you plan to use the provided Makefile.
+
+Refer to the official documentation of each tool for installation instructions.
+
+== Overview
+
+The "Fetch Kubernetes OpenAPI Docs" project provides a simple way to retrieve OpenAPI documentation for Kubernetes APIs. It includes a Bash script and a Makefile for ease of use.
+
+== Usage
+
+Assuming you have access to your Kubernetes cluster (e.g., by exporting the `KUBECONFIG` variable), follow these steps:
+
+- Clone the project repository and navigate to the project directory:
+
+[source,bash]
+----
+$ git clone https://github.com/jitendar-singh/fetch-k8s-openapi-docs.git
+$ cd fetch-k8s-openapi-docs
+----
+
+- Set the `KUBECONFIG` environment variable to your Kubernetes configuration file:
+
+[source,bash]
+----
+$ export KUBECONFIG=/path/to/your/kubeconfig
+----
+
+- To fetch OpenAPI documentation, run the Bash script `get_k8s_openapi_docs.sh`. Use the following commands:
+
+- Fetch all OpenAPI docs:
+
+[source,bash]
+----
+$ ./get_k8s_openapi_docs.sh
+----
+
+- Fetch docs for API groups containing a specific substring (replace `<substring>`):
+
+[source,bash]
+----
+$ ./get_k8s_openapi_docs.sh <substring>
+----
+
+- Optionally, you can use the provided `Makefile` to simplify script execution:
+
+- Fetch all OpenAPI docs:
+
+[source,bash]
+----
+$ make fetch_docs
+----
+
+- Fetch docs for API groups containing a specific substring (replace `<substring>`):
+
+[source,bash]
+----
+$ make fetch_docs_group <substring>
+----
+
+== Project Structure
+
+The project structure includes:
+
+- `apidocs/`: Directory for saving OpenAPI docs.
+- `get_k8s_openapi_docs.sh`: Bash script to fetch OpenAPI docs.
+- `Makefile`: Provides convenient targets for script execution.
+
+== Conclusion
+
+The "Fetch Kubernetes OpenAPI Docs" project makes it easy to access OpenAPI documentation for Kubernetes APIs. By following the usage instructions, you can quickly retrieve the documentation you need. The provided script and Makefile simplify the process and help you integrate this functionality into your workflow.

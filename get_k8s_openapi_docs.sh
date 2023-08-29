@@ -2,7 +2,7 @@
 
 ############################################################################
 ##  Fetch OpenAPI docs of the Kubernetes APIs from the running cluster
-##  Author: Jeremy Choi (jechoi@redhat.com)
+##  Author: Jitendar (jechoi@redhat.com)
 ## 
 ##  Usage: 
 ##   - Fetch all the OpenAPI docs:                       $ ./get_k8s_openapi_docs.sh
@@ -63,6 +63,9 @@ for apipath in $(kubectl api-versions); do
 
   if [[ $http_status -eq 200 ]]; then
     curl -s $download_url > $result_filepath
+      # Replace all instances of '{namespace}' with 'default'
+    echo "Finding {namespace} and replacing it with default in: $result_filepath"
+    sed -i 's/{namespace}/default/g' "$result_filepath"
   else 
     echo "The Openapi doc is not found in the URL: $download_url"
   fi
